@@ -7,7 +7,16 @@ class OperatorBase:
     ULTIMATE_STACK_MUL = None
 
     @classmethod
-    def _calc_mul(cls, skill_table: dict, skill_id: int, stack: int, stack_mul: int | None) -> int:
+    def _calc_mul(cls, 
+                  skill_table: dict[int, list[int]], 
+                  skill_id: int, 
+                  stack: int, 
+                  stack_mul: int | None
+    ) -> int:
+        if skill_id not in skill_table:
+            raise ValueError("skill_id is invalid number.")
+        if stack < 0:
+            raise ValueError("stack must be 0 or greater.")
         extra = 0
         if stack > 0:
             if stack_mul is None:
