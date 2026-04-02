@@ -78,10 +78,10 @@ def test_get_skill_mul_invalid_stack_2():
     stack = 1
 
     with pytest.raises(ValueError):
-        FakeOperator1.get_battle_skill_mul(skill_id, stack)
+        FakeOperator2.get_battle_skill_mul(skill_id, stack)
 
     with pytest.raises(ValueError):
-        FakeOperator1.get_combo_skill_mul(skill_id, stack)
+        FakeOperator2.get_combo_skill_mul(skill_id, stack)
 
     with pytest.raises(ValueError):
-        FakeOperator1.get_ultimate_mul(skill_id, stack)
+        FakeOperator2.get_ultimate_mul(skill_id, stack)
