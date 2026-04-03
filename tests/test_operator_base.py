@@ -1,6 +1,6 @@
 import pytest
 
-from src.skillmuls.operator_base import OperatorBase
+from src.entities.skill_muls.operator_base import OperatorBase
 
 
 class FakeOperator1(OperatorBase):
