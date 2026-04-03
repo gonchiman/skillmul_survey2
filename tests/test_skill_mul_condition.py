@@ -1,6 +1,6 @@
-from constants.operator_names import OperatorNames
-from constants.skill_type import SkillType
-from services.skill_mul_service.skill_mul_condition import SkillMulCondition
+from src.constants.operator_names import OperatorNames
+from src.constants.skill_type import SkillType
+from src.services.skill_mul_service.skill_mul_condition import SkillMulCondition
 
 
 def test_skill_mul_condition_stores_values():
