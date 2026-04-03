@@ -13,17 +13,19 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/get_skill_mul", methods=["POST"])
-def get_skill_mul():
-    cond = SkillMulCondition(
-        operator_name=OperatorNames(request.form["operator_name"]),
-        skill_type=SkillType(request.form["skill_type"]),
-        skill_id=int(request.form["skill_id"]),
-        stack=int(request.form["stack"] or 0)
-    )
-    skill_mul = SkillMulService.get_skill_mul(cond)
-
-    return render_template("index.html", skill_mul=skill_mul)
+@app.route("/skill_mul", methods=["GET", "POST"])
+def skill_mul_page():
+    if request.method == "POST":
+        cond = SkillMulCondition(
+            operator_name=OperatorNames(request.form["operator_name"]),
+            skill_type=SkillType(request.form["skill_type"]),
+            skill_id=int(request.form["skill_id"]),
+            stack=int(request.form["stack"] or 0)
+        )
+        skill_mul = SkillMulService.get_skill_mul(cond)
+        return render_template("skill_mul_search.html", skill_mul=skill_mul)
+    
+    return render_template("skill_mul_search.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
