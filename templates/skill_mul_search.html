@@ -1,0 +1,27 @@
+<h1>Skill Multiple Search Page</h1>
+
+<form action="/skill_mul" method="post">
+    <label for="operator_name">Operator Name</label>
+    <select id="operator_name" name="operator_name">
+        <option value="lifeng">Lifeng</option>
+    </select>
+
+    <label for="skill_type">Skill Type</label>
+    <select id="skill_type" name="skill_type">
+        <option value="battle">Battle Skill</option>
+        <option value="combo">Combo Skill</option>
+        <option value="ultimate">Ultimate</option>
+    </select>
+
+    <label for="skill_id">Skill ID</label>
+    <input id="skill_id" name="skill_id" type="number" value="1">
+
+    <label for="stack">Stack</label>
+    <input id="stack" name="stack" type="number" value="0">
+
+    <button type="submit">Search</button>
+</form>
+
+{% if skill_mul is not none %}
+    <p>Skill Mul: {{ skill_mul }}</p>
+{% endif %}
