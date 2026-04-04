@@ -18,3 +18,18 @@ class SkillMulService:
             return operator_cls.get_ultimate_mul(cond.skill_id, cond.stack)
         
         raise ValueError("invalid skill type")
+    
+    @staticmethod
+    def get_skill_ids(operator_name, skill_type) -> list:
+        operator_cls = OperatorRepository.get_by_id(operator_name)
+
+        if skill_type == SkillType.BATTLE:
+            return list(operator_cls.BATTLE_SKILLS.keys())
+        
+        if skill_type == SkillType.COMBO:
+            return list(operator_cls.COMBO_SKILLS.keys())
+        
+        if skill_type == SkillType.ULTIMATE:
+            return list(operator_cls.ULTIMATES.keys())
+        
+        raise ValueError("invalid skill type")
