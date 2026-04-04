@@ -2,22 +2,44 @@
 
 <form action="/skill_mul" method="post">
     <label for="operator_name">Operator Name</label>
-    <select id="operator_name" name="operator_name">
-        <option value="lifeng">Lifeng</option>
+    <select id="operator_name" name="operator_name" onchange="this.form.submit()">
+        {% for operator_name in operator_names %}
+            <option value="{{ operator_name.value }}"
+                {% if operator_name.value == selected_operator_name %}selected{% endif %}>
+                {{ operator_name.value }}
+            </option>
+        {% endfor %}
     </select>
 
     <label for="skill_type">Skill Type</label>
-    <select id="skill_type" name="skill_type">
-        <option value="battle">Battle Skill</option>
-        <option value="combo">Combo Skill</option>
-        <option value="ultimate">Ultimate</option>
+    <select id="skill_type" name="skill_type" onchange="this.form.submit()">
+        {% for skill_type in skill_types %}
+            <option value="{{ skill_type.value }}"
+                {% if skill_type.value == selected_skill_type %}selected{% endif %}>
+                {{ skill_type.value }}
+            </option>
+        {% endfor %}
     </select>
 
     <label for="skill_id">Skill ID</label>
-    <input id="skill_id" name="skill_id" type="number" value="1">
+    <select id="skill_id" name="skill_id">
+        {% for skill_id in skill_ids %}
+         <option value="{{ skill_id }}"
+            {% if skill_id|string == selected_skill_id %}selected{% endif %}>
+            {{ skill_id }}
+        </option>
+        {% endfor %}
+    </select>
 
     <label for="stack">Stack</label>
-    <input id="stack" name="stack" type="number" value="0">
+    <select id="stack" name="stack">
+        {% for stack in stacks %}
+            <option value="{{ stack }}"
+                {% if stack|string == selected_stack|string %}selected{% endif %}>
+                {{ stack }}
+            </option>
+        {% endfor %}
+    </select>
 
     <button type="submit">Search</button>
 </form>
