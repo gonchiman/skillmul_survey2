@@ -1,3 +1,4 @@
+from constants.operator_names import OperatorNames
 from src.constants.skill_type import SkillType
 from src.repositories.operator_repository import OperatorRepository
 from src.services.skill_mul_service.skill_mul_condition import SkillMulCondition
@@ -20,7 +21,7 @@ class SkillMulService:
         raise ValueError("invalid skill type")
     
     @staticmethod
-    def get_skill_ids(operator_name, skill_type) -> list:
+    def get_skill_ids(operator_name: OperatorNames, skill_type: SkillType) -> list:
         operator_cls = OperatorRepository.get_by_id(operator_name)
 
         if skill_type == SkillType.BATTLE:
@@ -35,7 +36,7 @@ class SkillMulService:
         raise ValueError("invalid skill type")
 
     @staticmethod
-    def get_stacks(operator_name, skill_type) -> list:
+    def get_stacks(operator_name: OperatorNames, skill_type: SkillType) -> list:
         operator_cls = OperatorRepository.get_by_id(operator_name)
 
         if skill_type == SkillType.BATTLE:
