@@ -5,7 +5,7 @@ import pytest
 from src.services.skill_mul_service.skill_mul_service import SkillMulService
 from src.constants.operator_names import OperatorNames
 from src.constants.skill_type import SkillType
-from src.services.skill_mul_service.skill_mul_condition import SkillMulCondition
+from src.entities.skill_mul_condition import SkillMulCondition
 
 
 class FakeSKillType(Enum):
