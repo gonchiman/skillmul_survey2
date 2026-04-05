@@ -1,6 +1,6 @@
 from src.constants.skill_type import SkillType
 from src.repositories.operator_repository import OperatorRepository
-from src.services.skill_mul_service.skill_mul_condition import SkillMulCondition
+from src.entities.skill_mul_condition import SkillMulCondition
 
 
 class SkillMulService:
