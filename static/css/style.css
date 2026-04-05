@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    margin: 24px;
+    line-height: 1.6;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+form > div {
+    margin-bottom: 16px;
+}
+
+label,
+span {
+    font-weight: bold;
+}
+
+select {
+    margin-top: 6px;
+    padding: 4px 8px;
+}
+
+input[type="radio"] {
+    margin-right: 6px;
+}
+
+.result {
+    margin-top: 16px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+    background-color: #f8f8f8;
+}
