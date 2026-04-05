@@ -14,15 +14,20 @@
     </div>
 
     <div>
-        <label for="skill_type">Skill Type</label>
-        <select id="skill_type" name="skill_type" onchange="this.form.submit()">
-            {% for skill_type in skill_types %}
-                <option value="{{ skill_type.value }}"
-                    {% if skill_type.value == selected_skill_type %}selected{% endif %}>
-                    {{ skill_type.value }}
-                </option>
-            {% endfor %}
-        </select>
+        <span>Skill Type</span>
+        {% for skill_type in skill_types %}
+            <div>
+                <input
+                    type="radio"
+                    id="skill_type_{{ skill_type.value }}"
+                    name="skill_type"
+                    value="{{ skill_type.value }}"
+                    onchange="this.form.submit()"
+                    {% if skill_type.value == selected_skill_type %}checked{% endif %}
+                >
+                <label for="skill_type_{{ skill_type.value }}">{{ skill_type.value }}</label>
+            </div>
+        {% endfor %}
     </div>
 
     <div>
