@@ -17,21 +17,20 @@ def index():
 def skill_mul_page():
     selected_operator_name = request.form.get("operator_name", list(OperatorNames)[0].value)
     selected_skill_type = request.form.get("skill_type", list(SkillType)[0].value)
-    selected_skill_id = request.form.get("skill_id", "")
-    selected_stack = request.form.get("stack", "0")
 
     operator_name = OperatorNames(selected_operator_name)
     skill_type = SkillType(selected_skill_type)
-    skill_ids = SkillMulService.get_skill_ids(operator_name, skill_type)
 
     skill_mul = None
 
-    if request.method == "POST" and selected_skill_id != "":
+    if request.method == "POST":
+        stack = SkillMulService.get_default_stack(operator_name, skill_type)
+
         cond = SkillMulCondition(
             operator_name=operator_name,
             skill_type=skill_type,
-            skill_id=int(selected_skill_id),
-            stack=int(selected_stack or 0)
+            skill_id=1,
+            stack=stack,
         )
         skill_mul = SkillMulService.get_skill_mul(cond)
     
@@ -39,12 +38,8 @@ def skill_mul_page():
         "skill_mul_search.html",
         operator_names=OperatorNames,
         skill_types=SkillType,
-        skill_ids=skill_ids,
-        stacks=[s for s in range(0, 5)],
         selected_operator_name=selected_operator_name,
         selected_skill_type=selected_skill_type,
-        selected_skill_id=selected_skill_id,
-        selected_stack=selected_stack,
         skill_mul=skill_mul,
     )
 
