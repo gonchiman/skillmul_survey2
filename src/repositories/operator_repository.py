@@ -1,4 +1,5 @@
-from src.constants.operator_names import OPERATORS, OperatorNames
+from src.constants.operator_names import OperatorNames
+from src.data.operator_registry import OPERATORS
 
 
 class OperatorRepository:
