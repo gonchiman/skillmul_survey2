@@ -1,6 +1,6 @@
 from enum import Enum
 
-from src.entities.skill_muls.operators.lifeng import Lifeng
+from src.entities.operators.lifeng import Lifeng
 
 
 class OperatorNames(Enum):
