@@ -30,30 +30,6 @@
         {% endfor %}
     </div>
 
-    <div>
-        <label for="skill_id">Skill ID</label>
-        <select id="skill_id" name="skill_id">
-            {% for skill_id in skill_ids %}
-             <option value="{{ skill_id }}"
-                {% if skill_id|string == selected_skill_id %}selected{% endif %}>
-                {{ skill_id }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-
-    <div>
-        <label for="stack">Stack</label>
-        <select id="stack" name="stack">
-            {% for stack in stacks %}
-                <option value="{{ stack }}"
-                    {% if stack|string == selected_stack|string %}selected{% endif %}>
-                    {{ stack }}
-                </option>
-            {% endfor %}
-        </select>
-    </div>
-
     <button type="submit">Search</button>
 </form>
 
