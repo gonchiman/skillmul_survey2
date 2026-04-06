@@ -1,0 +1,36 @@
+class OperatorBaseDraft:
+    BASIC_SKILL_MUL_1 = None
+    BASIC_SKILL_MUL_2 = None
+    BASIC_SKILL_MUL_3 = None
+    BASIC_SKILL_MUL_4 = None
+    BASIC_SKILL_MUL_5 = None
+    BASIC_SKILL_MUL_6 = None
+    BASIC_SKILL_MUL_7 = None
+    BASIC_SKILL_MUL_8 = None
+    BASIC_SKILL_MUL_9 = None
+    BASIC_SKILL_MUL_10 = None
+    BASIC_SKILL_STACK_MUL = None
+
+    COMBO_SKILL_MUL_1 = None
+    COMBO_SKILL_MUL_2 = None
+    COMBO_SKILL_MUL_3 = None
+    COMBO_SKILL_MUL_4 = None
+    COMBO_SKILL_MUL_5 = None
+    COMBO_SKILL_MUL_6 = None
+    COMBO_SKILL_MUL_7 = None
+    COMBO_SKILL_MUL_8 = None
+    COMBO_SKILL_MUL_9 = None
+    COMBO_SKILL_MUL_10 = None
+    COMBO_SKILL_STACK_MUL = None
+
+    ULTIMATE_MUL_1 = None
+    ULTIMATE_MUL_2 = None
+    ULTIMATE_MUL_3 = None
+    ULTIMATE_MUL_4 = None
+    ULTIMATE_MUL_5 = None
+    ULTIMATE_MUL_6 = None
+    ULTIMATE_MUL_7 = None
+    ULTIMATE_MUL_8 = None
+    ULTIMATE_MUL_9 = None
+    ULTIMATE_MUL_10 = None
+    ULTIMATE_STACK_MUL = None
