@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# pytest
+.pytest_cache/
+
+# virtual environment
+.venv/
+venv/
+env/
+
+# editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# generated images
+classes.png
+packages.png

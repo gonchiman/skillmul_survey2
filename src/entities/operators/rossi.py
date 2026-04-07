@@ -1,4 +1,4 @@
-from ..operator_base import OperatorBase
+from src.entities.operator_base import OperatorBase
 
 
 class Rossi(OperatorBase):
