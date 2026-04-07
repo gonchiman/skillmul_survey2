@@ -35,3 +35,21 @@ class OperatorBase:
     @classmethod
     def get_ultimate_mul(cls, skill_id: int, stack: int = 0) -> int:
         return cls._calc_mul(cls.ULTIMATES, skill_id, stack, cls.ULTIMATE_STACK_MUL)
+    
+    @classmethod
+    def is_battle_skill_stack_mul(cls) -> bool:
+        if cls.BATTLE_SKILL_STACK_MUL is None:
+            return False
+        return True
+    
+    @classmethod
+    def is_combo_skill_stack_mul(cls) -> bool:
+        if cls.COMBO_SKILL_STACK_MUL is None:
+            return False
+        return True
+    
+    @classmethod
+    def is_ultimate_skill_stack_mul(cls) -> bool:
+        if cls.ULTIMATE_STACK_MUL is None:
+            return False
+        return True
