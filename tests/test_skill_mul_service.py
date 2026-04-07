@@ -29,3 +29,25 @@ def test_get_skill_mul_value_error_when_skill_type_is_invalid():
 
     with pytest.raises(ValueError):
         SkillMulService.get_skill_mul(cond)
+
+def test_get_skill_mul_confirm_rossi_is_correct():
+    cond_battle = SkillMulCondition(
+        operator_name=OperatorNames.ROSSI,
+        skill_type=SkillType.BATTLE,
+    )
+    cond_combo = SkillMulCondition(
+        operator_name=OperatorNames.ROSSI,
+        skill_type=SkillType.COMBO,
+    )
+    cond_ultimate = SkillMulCondition(
+        operator_name=OperatorNames.ROSSI,
+        skill_type=SkillType.ULTIMATE,
+    )
+
+    skill_mul_battle = SkillMulService.get_skill_mul(cond_battle)
+    skill_mul_combo = SkillMulService.get_skill_mul(cond_combo)
+    skill_mul_ultimate = SkillMulService.get_skill_mul(cond_ultimate)
+
+    assert skill_mul_battle == sum([192, 288])
+    assert skill_mul_combo == sum([150, 300, 180*4])
+    assert skill_mul_ultimate == sum([600, 250, 750])
