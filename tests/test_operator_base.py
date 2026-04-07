@@ -85,3 +85,11 @@ def test_get_skill_mul_invalid_stack_2():
 
     with pytest.raises(ValueError):
         FakeOperator2.get_ultimate_mul(skill_id, stack)
+
+def test_is_skill_stack_mul():
+    assert FakeOperator1.is_battle_skill_stack_mul() == True
+    assert FakeOperator1.is_combo_skill_stack_mul() == True
+    assert FakeOperator1.is_ultimate_skill_stack_mul() == True
+    assert FakeOperator2.is_battle_skill_stack_mul() == False
+    assert FakeOperator2.is_combo_skill_stack_mul() == False
+    assert FakeOperator2.is_ultimate_skill_stack_mul() == False
