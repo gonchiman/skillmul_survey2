@@ -21,13 +21,9 @@ def skill_mul_page():
     operator_name = OperatorNames(selected_operator_name)
     skill_type = SkillType(selected_skill_type)
 
-    stack = SkillMulService.get_default_stack(operator_name, skill_type)
-
     cond = SkillMulCondition(
         operator_name=operator_name,
         skill_type=skill_type,
-        skill_id=1,
-        stack=stack,
     )
     skill_mul = SkillMulService.get_skill_mul(cond)
     
