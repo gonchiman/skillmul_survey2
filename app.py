@@ -11,7 +11,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template(
+        "index.html",
+        page_title="Endfield WikiWiki"
+    )
 
 @app.route("/skill_mul", methods=["GET", "POST"])
 def skill_mul_page():
@@ -29,6 +32,7 @@ def skill_mul_page():
     
     return render_template(
         "skill_mul_search.html",
+        page_title="Skill Multiple Search",
         operator_names=OperatorNames,
         skill_types=SkillType,
         selected_operator_name=selected_operator_name,
