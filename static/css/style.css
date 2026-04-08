@@ -41,3 +41,23 @@ input[type="radio"] {
     max-width: 400px;
     background-color: #f8f8f8;
 }
+
+.layout {
+    display: flex;
+}
+
+aside {
+    width: 220px;
+    padding: 16px;
+    border-right: 1px solid #ccc;
+}
+
+main {
+    flex: 1;
+    padding: 16px;
+}
+
+aside a {
+    display: block;
+    margin-bottom: 8px;
+}
