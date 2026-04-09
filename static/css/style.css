@@ -47,17 +47,21 @@ input[type="radio"] {
 }
 
 aside {
-    width: 220px;
-    padding: 16px;
+    width: 200px;
+    padding: 10px;
     border-right: 1px solid #ccc;
-}
-
-main {
-    flex: 1;
-    padding: 16px;
 }
 
 aside a {
     display: block;
     margin-bottom: 8px;
+}
+
+aside.closed {
+    display: none
+}
+
+main {
+    flex: 1;
+    padding: 10px;
 }
