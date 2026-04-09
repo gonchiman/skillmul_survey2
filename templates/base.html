@@ -7,24 +7,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <button id="menu-toggle" type="button" class="menu-bottun">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <h1>{{ page_title }}</h1>
+    <header class="site-header">
+        <button id="menu-toggle" class="menu-bottun">☰</button>
+
+        <a href="/" class="site-logo">Endfield WikiWiki</a>
+
+        <h1 class="page-title">{{ page_title }}</h1>
     </header>
 
-    <aside id="sidebar" class="closed">
-        <a href="/">Home Page</a>
-        <a href="/skill_mul">Skill Mul Multiple Search</a>
+    <aside id="sidebar" class="sidebar closed">
+        <nav class="sidevar-nav">
+            <a href="/">Home</a>
+            <a href="/skill_mul">Skill Mul Multiple Search</a>
+        </nav>
     </aside>
 
-    <main>
+    <main class="main-content">
         {% block content %}{% endblock %}
     </main>
 
-    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
 </body>
 </html>

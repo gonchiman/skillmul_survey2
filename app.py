@@ -13,7 +13,7 @@ app = Flask(__name__)
 def index():
     return render_template(
         "index.html",
-        page_title="Endfield WikiWiki"
+        page_title="Home"
     )
 
 @app.route("/skill_mul", methods=["GET", "POST"])

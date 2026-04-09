@@ -4,6 +4,10 @@ body {
     line-height: 1.6;
 }
 
+h1 {
+    margin: 0;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -11,8 +15,13 @@ header {
     margin-bottom: 20px;
 }
 
-h1 {
-    margin: 0;
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 56px;
+    padding: 0 16px;
+    border-bottom: 1px solid #ccc;
 }
 
 .layout {
@@ -34,32 +43,50 @@ aside {
     z-index: 1000;
 }
 
+aside.closed {
+    display: none;
+}
+
 aside a {
     display: block;
     margin-bottom: 8px;
 }
 
-aside.closed {
-    display: none;
-}
-
 .menu-button {
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    background-color: white;
+    font-size: 24px;
+    background: none;
+    border: none;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-.menu-button span {
-    display: block;
-    height: 3px;
-    background-color: black;
-    border-radius: 2px;
+.site-logo {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.page-title {
+    font-size: 36px;
+    margin: 0;
+}
+
+.sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 20vw;
+    min-width: 240px;
+    height: calc(100vh - 56px);
+    background: white;
+    border-right: 1px solid #ccc;
+    z-index: 1000;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
 }
 
 form {
