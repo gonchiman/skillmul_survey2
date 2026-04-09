@@ -8,29 +8,23 @@
 </head>
 <body>
     <header>
+        <button id="menu-toggle" type="button" class="menu-bottun">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <h1>{{ page_title }}</h1>
     </header>
 
-    <button id="menu-toggle" type="button">Menu</button>
+    <aside id="sidebar" class="closed">
+        <a href="/">Home Page</a>
+        <a href="/skill_mul">Skill Mul Multiple Search</a>
+    </aside>
 
-    <div class="layout">
-        <aside id="sidebar" class="closed">
-            <a href="/">Home Page</a>
-            <a href="/skill_mul">Skill Mul Multiple Search</a>
-        </aside>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
-        <main>
-            {% block content %}{% endblock %}
-        </main>
-    </div>
-
-    <script>
-        const button = document.getElementById("menu-toggle");
-        const sidebar = document.getElementById("sidebar");
-
-        button.addEventListener("click", function(){
-            sidebar.classList.toggle("closed")
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
 </body>
 </html>

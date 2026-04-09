@@ -4,8 +4,62 @@ body {
     line-height: 1.6;
 }
 
-h1 {
+header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.layout {
+    display: flex;
+}
+
+main {
+    padding: 10px 0;
+}
+
+aside {
+    position: fixed;
+    top: 80px;
+    left: 24px;
+    width: 200px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background-color: white;
+    z-index: 1000;
+}
+
+aside a {
+    display: block;
+    margin-bottom: 8px;
+}
+
+aside.closed {
+    display: none;
+}
+
+.menu-button {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-button span {
+    display: block;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
 }
 
 form {
@@ -40,28 +94,4 @@ input[type="radio"] {
     border-radius: 8px;
     max-width: 400px;
     background-color: #f8f8f8;
-}
-
-.layout {
-    display: flex;
-}
-
-aside {
-    width: 200px;
-    padding: 10px;
-    border-right: 1px solid #ccc;
-}
-
-aside a {
-    display: block;
-    margin-bottom: 8px;
-}
-
-aside.closed {
-    display: none
-}
-
-main {
-    flex: 1;
-    padding: 10px;
 }
