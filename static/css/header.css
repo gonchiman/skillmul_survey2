@@ -1,0 +1,27 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 56px;
+    padding: 0 16px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.menu-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.site-logo {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.page-title {
+    font-size: 36px;
+    margin: 0;
+}

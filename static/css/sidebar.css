@@ -1,0 +1,21 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    width: 20vw;
+    min-width: 240px;
+    background: white;
+    border-right: 1px solid #ccc;
+    z-index: 1000;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.sidebar-nav a {
+    display: block;
+    margin-bottom: 8px;
+}
