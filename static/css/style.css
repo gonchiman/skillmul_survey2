@@ -8,13 +8,6 @@ h1 {
     margin: 0;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
 .site-header {
     display: flex;
     align-items: center;
@@ -22,34 +15,11 @@ header {
     height: 56px;
     padding: 0 16px;
     border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
 }
 
-.layout {
-    display: flex;
-}
-
-main {
-    padding: 10px 0;
-}
-
-aside {
-    position: fixed;
-    top: 80px;
-    left: 24px;
-    width: 200px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    background-color: white;
-    z-index: 1000;
-}
-
-aside.closed {
-    display: none;
-}
-
-aside a {
-    display: block;
-    margin-bottom: 8px;
+.main-content {
+    padding: 16px;
 }
 
 .menu-button {
@@ -72,11 +42,9 @@ aside a {
 
 .sidebar {
     position: fixed;
-    top: 56px;
     left: 0;
     width: 20vw;
     min-width: 240px;
-    height: calc(100vh - 56px);
     background: white;
     border-right: 1px solid #ccc;
     z-index: 1000;
@@ -87,6 +55,11 @@ aside a {
 
 .sidebar.closed {
     transform: translateX(-100%);
+}
+
+.sidebar-nav a {
+    display: block;
+    margin-bottom: 8px;
 }
 
 form {
