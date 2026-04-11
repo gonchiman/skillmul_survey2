@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
@@ -15,7 +16,7 @@
     <header class="site-header">
         <button id="menu-toggle" class="menu-button">☰</button>
 
-        <a href="/" class="site-logo">Endfield WikiWiki</a>
+        <a href="/" class="site-logo">Endfield<br>WikiWiki</a>
 
         <h1 class="page-title">{{ page_title }}</h1>
     </header>

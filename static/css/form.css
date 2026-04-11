@@ -1,22 +1,27 @@
 form {
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    max-width: 400px;
+    padding: var(--panel-padding);
+    border-radius: var(--panel-border-radius);
+    max-width: var(--panel-max-width);
+    min-width: var(--panel-min-width);
+    background-color: var(--panel-bg);
 }
 
 form > div {
     margin-bottom: 16px;
 }
 
-label,
-span {
+label[for="operator_name"] {
+    display: block;
     font-weight: bold;
 }
 
 select {
     margin-top: 6px;
     padding: 4px 8px;
+}
+
+legend {
+    font-weight: bold;
 }
 
 input[type="radio"] {
