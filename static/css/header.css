@@ -25,6 +25,7 @@ header {
 }
 
 .page-title {
-    font-size: 28px;
     margin: 0;
+    font-size: 28px;
+    white-space: nowrap;
 }
