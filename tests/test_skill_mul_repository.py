@@ -1,5 +1,3 @@
-from enum import Enum
-
 from src.constants.skill_type import SkillType
 from src.repositories.skill_type_repository import SkillTypeRepository
 
