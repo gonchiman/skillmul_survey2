@@ -1,6 +1,7 @@
 import pandas as pd
 
 from src.constants.operator_names import OperatorNames
+from src.constants.skill_mul_columns import SKILL_MUL_COLUMNS
 from src.constants.skill_type import SkillType
 from src.entities.skill_mul_condition import SkillMulCondition
 from src.services.skill_mul_service import SkillMulService
@@ -13,11 +14,7 @@ class SkillMulTableBuilder:
         return pd.DataFrame.from_dict(
             data,
             orient="index",
-            columns=[
-                "battle_skill",
-                "combo_skill",
-                "ultimate"
-            ]
+            columns=SKILL_MUL_COLUMNS,
         )
 
     @staticmethod
