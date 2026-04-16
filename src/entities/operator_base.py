@@ -8,7 +8,7 @@ class OperatorBase:
 
     @classmethod
     def _calc_mul(cls, 
-                  skill_table: list[int], 
+                  skill_mul: list[int], 
                   stack: int, 
                   stack_mul: int | None
     ) -> int:
@@ -21,7 +21,7 @@ class OperatorBase:
                 raise ValueError("This operator doesn't support stack.")
             extra = stack_mul * stack
 
-        return sum(skill_table) + extra
+        return sum(skill_mul) + extra
     
     @classmethod
     def get_battle_skill_mul(cls, stack: int) -> int:
