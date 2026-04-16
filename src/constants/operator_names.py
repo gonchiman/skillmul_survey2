@@ -8,3 +8,4 @@ class OperatorNames(Enum):
     CHEN_QIANYU = "chen_qianyu"
     ESTELLA = "estella"
     POGRANICHNIK = "pogranichnik"
+    ALESH = "alesh"
