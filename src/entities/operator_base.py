@@ -1,14 +1,14 @@
 class OperatorBase:
-    BATTLE_SKILLS = []
-    COMBO_SKILLS = []
-    ULTIMATES = []
+    BATTLE_SKILLS = ()
+    COMBO_SKILLS = ()
+    ULTIMATES = ()
     BATTLE_SKILL_STACK_MUL = None
     COMBO_SKILL_STACK_MUL = None
     ULTIMATE_STACK_MUL = None
 
     @classmethod
     def _calc_mul(cls, 
-                  skill_mul: list[int], 
+                  skill_mul: tuple[int], 
                   stack: int, 
                   stack_mul: int | None
     ) -> int:
