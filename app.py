@@ -31,9 +31,9 @@ def skill_mul_page():
     )
 
     skill_mul = SkillMulService.get_skill_mul(cond)
-    deviation_from_mean = SkillMulStatisticsServiceForPersonal.get_deviation_from_mean(cond)
-    deviation_from_median = SkillMulStatisticsServiceForPersonal.get_deviation_from_median(cond)
-    standard_score = SkillMulStatisticsServiceForPersonal.get_standard_score(cond)
+    deviation_from_mean = round(SkillMulStatisticsServiceForPersonal.get_deviation_from_mean(cond), 2)
+    deviation_from_median = round(SkillMulStatisticsServiceForPersonal.get_deviation_from_median(cond), 2)
+    standard_score = round(SkillMulStatisticsServiceForPersonal.get_standard_score(cond), 2)
     
     return render_template(
         "skill_mul_search.html",
