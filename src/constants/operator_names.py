@@ -6,3 +6,4 @@ class OperatorNames(Enum):
     ROSSI = "rossi"
     ENDMINISTRATOR = "endministrator"
     CHEN_QIANYU = "chen_qianyu"
+    ESTELLA = "estella"
