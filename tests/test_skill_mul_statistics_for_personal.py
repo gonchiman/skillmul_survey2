@@ -32,7 +32,7 @@ def test_get_statistics_returns_correct_values(monkeypatch):
         SkillType.BATTLE,
     )
 
-    deviation =  SkillMulStatisticsServiceForPersonal.get_deviation(cond)
+    deviation =  SkillMulStatisticsServiceForPersonal.get_deviation_from_mean(cond)
     deviation_from_median = SkillMulStatisticsServiceForPersonal.get_deviation_from_median(cond)
     standard_score = SkillMulStatisticsServiceForPersonal.get_standard_score(cond)
 

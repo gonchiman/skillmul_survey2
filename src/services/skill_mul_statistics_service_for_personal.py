@@ -5,7 +5,7 @@ from src.services.skill_mul_statistics_service import SkillMulStatisticsService
 
 class SkillMulStatisticsServiceForPersonal:
     @staticmethod
-    def get_deviation(cond: SkillMulCondition) -> float:
+    def get_deviation_from_mean(cond: SkillMulCondition) -> float:
         skill_mul = SkillMulService.get_skill_mul(cond)
         skill_mul_mean = SkillMulStatisticsService.get_mean(cond.skill_type)
         return skill_mul - skill_mul_mean

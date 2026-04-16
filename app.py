@@ -4,6 +4,7 @@ from src.constants.operator_names import OperatorNames
 from src.constants.skill_type import SkillType
 from src.entities.skill_mul_condition import SkillMulCondition
 from src.services.skill_mul_service import SkillMulService
+from src.services.skill_mul_statistics_service_for_personal import SkillMulStatisticsServiceForPersonal
 
 
 app = Flask(__name__)
@@ -28,7 +29,11 @@ def skill_mul_page():
         operator_name=operator_name,
         skill_type=skill_type,
     )
+
     skill_mul = SkillMulService.get_skill_mul(cond)
+    deviation_from_mean = SkillMulStatisticsServiceForPersonal.get_deviation_from_mean(cond)
+    deviation_from_median = SkillMulStatisticsServiceForPersonal.get_deviation_from_median(cond)
+    standard_score = SkillMulStatisticsServiceForPersonal.get_standard_score(cond)
     
     return render_template(
         "skill_mul_search.html",
@@ -38,6 +43,9 @@ def skill_mul_page():
         selected_operator_name=selected_operator_name,
         selected_skill_type=selected_skill_type,
         skill_mul=skill_mul,
+        deviation_from_mean=deviation_from_mean,
+        deviation_from_median=deviation_from_median,
+        standard_score=standard_score,
     )
 
 if __name__ == "__main__":
