@@ -11,17 +11,17 @@ class SkillMulService:
 
         if cond.skill_type == SkillType.BATTLE:
             if operator_cls.is_battle_skill_stack_mul():
-                return operator_cls.get_battle_skill_mul(1, MAX_STACKS)
-            return operator_cls.get_battle_skill_mul(1, 0)
+                return operator_cls.get_battle_skill_mul(MAX_STACKS)
+            return operator_cls.get_battle_skill_mul(0)
         
         if cond.skill_type == SkillType.COMBO:
             if operator_cls.is_combo_skill_stack_mul():
-                return operator_cls.get_combo_skill_mul(1, MAX_STACKS)
-            return operator_cls.get_combo_skill_mul(1, 0)
+                return operator_cls.get_combo_skill_mul(MAX_STACKS)
+            return operator_cls.get_combo_skill_mul(0)
         
         if cond.skill_type == SkillType.ULTIMATE:
             if operator_cls.is_ultimate_skill_stack_mul():
-                return operator_cls.get_ultimate_mul(1, MAX_STACKS)
-            return operator_cls.get_ultimate_mul(1, 0)
+                return operator_cls.get_ultimate_mul(MAX_STACKS)
+            return operator_cls.get_ultimate_mul(0)
         
         raise ValueError("invalid skill type")
