@@ -7,3 +7,4 @@ class OperatorNames(Enum):
     ENDMINISTRATOR = "endministrator"
     CHEN_QIANYU = "chen_qianyu"
     ESTELLA = "estella"
+    POGRANICHNIK = "pogranichnik"
