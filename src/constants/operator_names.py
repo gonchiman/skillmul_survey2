@@ -9,3 +9,4 @@ class OperatorNames(Enum):
     ESTELLA = "estella"
     POGRANICHNIK = "pogranichnik"
     ALESH = "alesh"
+    ARCLIGHT = "arclight"

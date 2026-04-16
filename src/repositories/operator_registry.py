@@ -1,5 +1,6 @@
 from src.constants.operator_names import OperatorNames
 from src.entities.operators.alesh import Alesh
+from src.entities.operators.arclight import Arclight
 from src.entities.operators.chen_qianyu import ChenQianyu
 from src.entities.operators.endministrator import Endministrator
 from src.entities.operators.estella import Estella
@@ -16,4 +17,5 @@ OPERATORS = {
     OperatorNames.ESTELLA: Estella,
     OperatorNames.POGRANICHNIK: Pogranichnik,
     OperatorNames.ALESH: Alesh,
+    OperatorNames.ARCLIGHT: Arclight,
 }
