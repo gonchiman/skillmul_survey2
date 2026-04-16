@@ -8,5 +8,3 @@ from src.constants.skill_type import SkillType
 class SkillMulCondition:
     operator_name: OperatorNames
     skill_type: SkillType
-    skill_id: int = 1
-    stack: int = 0

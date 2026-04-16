@@ -13,8 +13,6 @@ def test_skill_mul_page_post_displays_skill_mul():
     response = client.post("/skill_mul", data={
         "operator_name": "rossi",
         "skill_type": "battle",
-        "skill_id": "1",
-        "stack": "4"
     })
 
     assert response.status_code == 200 
