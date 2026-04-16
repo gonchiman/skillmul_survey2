@@ -1,0 +1,7 @@
+from src.entities.operator_base import OperatorBase
+
+
+class Template(OperatorBase):
+    BATTLE_SKILLS = ()
+    COMBO_SKILLS = ()
+    ULTIMATES = ()
