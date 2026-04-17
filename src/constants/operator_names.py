@@ -10,3 +10,4 @@ class OperatorNames(Enum):
     POGRANICHNIK = "pogranichnik"
     ALESH = "alesh"
     ARCLIGHT = "arclight"
+    AKEKURI = "akekuri"
