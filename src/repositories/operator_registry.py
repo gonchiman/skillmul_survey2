@@ -8,6 +8,7 @@ from src.entities.operators.ember import Ember
 from src.entities.operators.endministrator import Endministrator
 from src.entities.operators.estella import Estella
 from src.entities.operators.lifeng import Lifeng
+from src.entities.operators.perlica import Perlica
 from src.entities.operators.pogranichnik import Pogranichnik
 from src.entities.operators.rossi import Rossi
 from src.entities.operators.snowshine import Snowshine
@@ -28,4 +29,5 @@ OPERATORS = {
     OperatorNames.SNOWSHINE: Snowshine,
     OperatorNames.CATCHER: Catcher,
     OperatorNames.TANGTANG: Tangtang,
+    OperatorNames.PERLICA: Perlica,
 }

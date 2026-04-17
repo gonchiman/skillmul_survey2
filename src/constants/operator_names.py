@@ -15,3 +15,4 @@ class OperatorNames(Enum):
     SNOWSHINE = "snowshine"
     CATCHER = "catcher"
     TANGTANG = "tangtang"
+    PERLICA = "perlica"
