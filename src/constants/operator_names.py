@@ -26,3 +26,4 @@ class OperatorNames(Enum):
     GILBARTA = "gilbarta"
     ARDELIA = "ardelia"
     XAIHI = "xaihi"
+    ANTAL = "antal"

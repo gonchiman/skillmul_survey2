@@ -1,6 +1,7 @@
 from src.constants.operator_names import OperatorNames
 from src.entities.operators.akekuri import Akekuri
 from src.entities.operators.alesh import Alesh
+from src.entities.operators.antal import Antal
 from src.entities.operators.arclight import Arclight
 from src.entities.operators.ardelia import Ardelia
 from src.entities.operators.avywenna import Avywenna
@@ -50,4 +51,5 @@ OPERATORS = {
     OperatorNames.GILBARTA: Gilbarta,
     OperatorNames.ARDELIA: Ardelia,
     OperatorNames.XAIHI: Xaihi,
+    OperatorNames.ANTAL: Antal,
 }
