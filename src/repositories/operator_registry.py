@@ -8,6 +8,7 @@ from src.entities.operators.ember import Ember
 from src.entities.operators.endministrator import Endministrator
 from src.entities.operators.estella import Estella
 from src.entities.operators.fluorite import Fluorite
+from src.entities.operators.laevatain import Laevatain
 from src.entities.operators.lifeng import Lifeng
 from src.entities.operators.perlica import Perlica
 from src.entities.operators.pogranichnik import Pogranichnik
@@ -36,4 +37,5 @@ OPERATORS = {
     OperatorNames.WULFGARD: Wulfgard,
     OperatorNames.FLUORITE: Fluorite,
     OperatorNames.YVONNE: Yvonne,
+    OperatorNames.LAEVATAIN: Laevatain,
 }

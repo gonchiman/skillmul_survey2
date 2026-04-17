@@ -19,3 +19,4 @@ class OperatorNames(Enum):
     WULFGARD = "wulfgard"
     FLUORITE = "fluorite"
     YVONNE = "yvonne"
+    LAEVATAIN = "laevatain"
