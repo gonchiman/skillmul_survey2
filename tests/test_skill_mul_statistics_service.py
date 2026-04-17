@@ -43,3 +43,20 @@ def test_get_statistics_is_non_negative():
         assert mean >= 0
         assert median >= 0
         assert std >= 0
+
+def test_get_statistics_when_columns_have_nan_value(monkeypatch):
+    df = pd.DataFrame({
+        "battle_skill": [10, float("nan"), 30],
+        "combo_skill": [40, float("nan"), 60],
+        "ultimate": [70, float("nan"), 90],
+    })
+
+    monkeypatch.setattr(
+        SkillMulStatisticsService,
+        "_get_skill_mul_df",
+        staticmethod(lambda: df),
+    )
+
+    assert SkillMulStatisticsService.get_mean(SkillType.BATTLE) == statistics.mean([10, 30])
+    assert SkillMulStatisticsService.get_median(SkillType.BATTLE) == statistics.median([10, 30])
+    assert SkillMulStatisticsService.get_std(SkillType.BATTLE) == pytest.approx(statistics.pstdev([10, 30]))
