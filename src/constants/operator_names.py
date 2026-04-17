@@ -20,3 +20,4 @@ class OperatorNames(Enum):
     FLUORITE = "fluorite"
     YVONNE = "yvonne"
     LAEVATAIN = "laevatain"
+    LASTRITE = "lastrite"
