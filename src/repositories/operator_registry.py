@@ -3,6 +3,7 @@ from src.entities.operators.akekuri import Akekuri
 from src.entities.operators.alesh import Alesh
 from src.entities.operators.arclight import Arclight
 from src.entities.operators.chen_qianyu import ChenQianyu
+from src.entities.operators.ember import Ember
 from src.entities.operators.endministrator import Endministrator
 from src.entities.operators.estella import Estella
 from src.entities.operators.lifeng import Lifeng
@@ -20,4 +21,5 @@ OPERATORS = {
     OperatorNames.ALESH: Alesh,
     OperatorNames.ARCLIGHT: Arclight,
     OperatorNames.AKEKURI: Akekuri,
+    OperatorNames.EMBER: Ember
 }
