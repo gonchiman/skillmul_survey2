@@ -21,6 +21,7 @@ from src.entities.operators.rossi import Rossi
 from src.entities.operators.snowshine import Snowshine
 from src.entities.operators.tangtang import Tangtang
 from src.entities.operators.wulfgard import Wulfgard
+from src.entities.operators.xaihi import Xaihi
 from src.entities.operators.yvonne import Yvonne
 
 
@@ -48,4 +49,5 @@ OPERATORS = {
     OperatorNames.DA_PAN: DaPan,
     OperatorNames.GILBARTA: Gilbarta,
     OperatorNames.ARDELIA: Ardelia,
+    OperatorNames.XAIHI: Xaihi,
 }

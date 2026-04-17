@@ -25,3 +25,4 @@ class OperatorNames(Enum):
     DA_PAN = "da_pan"
     GILBARTA = "gilbarta"
     ARDELIA = "ardelia"
+    XAIHI = "xaihi"
