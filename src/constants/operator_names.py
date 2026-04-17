@@ -18,3 +18,4 @@ class OperatorNames(Enum):
     PERLICA = "perlica"
     WULFGARD = "wulfgard"
     FLUORITE = "fluorite"
+    YVONNE = "yvonne"
