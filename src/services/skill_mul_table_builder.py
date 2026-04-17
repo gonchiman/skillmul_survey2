@@ -4,6 +4,7 @@ from src.constants.operator_names import OperatorNames
 from src.constants.skill_mul_columns import SKILL_MUL_COLUMNS
 from src.constants.skill_type import SkillType
 from src.entities.skill_mul_condition import SkillMulCondition
+from src.repositories.operator_repository import OperatorRepository
 from src.services.skill_mul_service import SkillMulService
 
 
@@ -31,9 +32,27 @@ class SkillMulTableBuilder:
                     operator_name=operator_name,
                     skill_type=skill_type,
                 )
+
+                if not SkillMulTableBuilder._has_damage_skill(cond):
+                    skill_muls.append(float("nan"))
+                    continue
+
                 skill_mul = SkillMulService.get_skill_mul(cond)
                 skill_muls.append(skill_mul)
 
             values.append(skill_muls)
 
         return dict(zip(keys, values))
+    
+    @staticmethod
+    def _has_damage_skill(cond: SkillMulCondition) -> bool:
+        operator_cls = OperatorRepository.get_by_id(cond.operator_name)
+
+        if cond.skill_type == SkillType.BATTLE:
+            return bool(operator_cls.BATTLE_SKILLS)
+        elif cond.skill_type == SkillType.COMBO:
+            return bool(operator_cls.COMBO_SKILLS)
+        elif cond.skill_type == SkillType.ULTIMATE:
+            return bool(operator_cls.ULTIMATES)
+        
+        raise ValueError("invalid skill type")
