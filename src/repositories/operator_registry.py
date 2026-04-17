@@ -9,6 +9,7 @@ from src.entities.operators.estella import Estella
 from src.entities.operators.lifeng import Lifeng
 from src.entities.operators.pogranichnik import Pogranichnik
 from src.entities.operators.rossi import Rossi
+from src.entities.operators.snowshine import Snowshine
 
 
 OPERATORS = {
@@ -21,5 +22,6 @@ OPERATORS = {
     OperatorNames.ALESH: Alesh,
     OperatorNames.ARCLIGHT: Arclight,
     OperatorNames.AKEKURI: Akekuri,
-    OperatorNames.EMBER: Ember
+    OperatorNames.EMBER: Ember,
+    OperatorNames.SNOWSHINE: Snowshine,
 }

@@ -12,3 +12,4 @@ class OperatorNames(Enum):
     ARCLIGHT = "arclight"
     AKEKURI = "akekuri"
     EMBER = "ember"
+    SNOWSHINE = "snowshine"
