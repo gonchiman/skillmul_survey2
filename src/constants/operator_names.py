@@ -13,3 +13,4 @@ class OperatorNames(Enum):
     AKEKURI = "akekuri"
     EMBER = "ember"
     SNOWSHINE = "snowshine"
+    CATCHER = "catcher"
