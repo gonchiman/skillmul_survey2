@@ -17,3 +17,4 @@ class OperatorNames(Enum):
     TANGTANG = "tangtang"
     PERLICA = "perlica"
     WULFGARD = "wulfgard"
+    FLUORITE = "fluorite"
