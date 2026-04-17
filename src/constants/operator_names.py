@@ -24,3 +24,4 @@ class OperatorNames(Enum):
     AVYWENNA = "avywenna"
     DA_PAN = "da_pan"
     GILBARTA = "gilbarta"
+    ARDELIA = "ardelia"

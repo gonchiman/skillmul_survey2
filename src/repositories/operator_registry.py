@@ -2,6 +2,7 @@ from src.constants.operator_names import OperatorNames
 from src.entities.operators.akekuri import Akekuri
 from src.entities.operators.alesh import Alesh
 from src.entities.operators.arclight import Arclight
+from src.entities.operators.ardelia import Ardelia
 from src.entities.operators.avywenna import Avywenna
 from src.entities.operators.catcher import Catcher
 from src.entities.operators.chen_qianyu import ChenQianyu
@@ -46,4 +47,5 @@ OPERATORS = {
     OperatorNames.AVYWENNA: Avywenna,
     OperatorNames.DA_PAN: DaPan,
     OperatorNames.GILBARTA: Gilbarta,
+    OperatorNames.ARDELIA: Ardelia,
 }
