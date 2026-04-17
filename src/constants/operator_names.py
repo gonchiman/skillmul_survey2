@@ -14,3 +14,4 @@ class OperatorNames(Enum):
     EMBER = "ember"
     SNOWSHINE = "snowshine"
     CATCHER = "catcher"
+    TANGTANG = "tangtang"

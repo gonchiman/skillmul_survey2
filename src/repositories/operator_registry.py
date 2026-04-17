@@ -11,6 +11,7 @@ from src.entities.operators.lifeng import Lifeng
 from src.entities.operators.pogranichnik import Pogranichnik
 from src.entities.operators.rossi import Rossi
 from src.entities.operators.snowshine import Snowshine
+from src.entities.operators.tangtang import Tangtang
 
 
 OPERATORS = {
@@ -26,4 +27,5 @@ OPERATORS = {
     OperatorNames.EMBER: Ember,
     OperatorNames.SNOWSHINE: Snowshine,
     OperatorNames.CATCHER: Catcher,
+    OperatorNames.TANGTANG: Tangtang,
 }
