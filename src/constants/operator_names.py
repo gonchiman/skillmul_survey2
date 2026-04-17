@@ -23,3 +23,4 @@ class OperatorNames(Enum):
     LASTRITE = "lastrite"
     AVYWENNA = "avywenna"
     DA_PAN = "da_pan"
+    GILBARTA = "gilbarta"
