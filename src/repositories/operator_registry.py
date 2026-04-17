@@ -5,6 +5,7 @@ from src.entities.operators.arclight import Arclight
 from src.entities.operators.avywenna import Avywenna
 from src.entities.operators.catcher import Catcher
 from src.entities.operators.chen_qianyu import ChenQianyu
+from src.entities.operators.da_pan import DaPan
 from src.entities.operators.ember import Ember
 from src.entities.operators.endministrator import Endministrator
 from src.entities.operators.estella import Estella
@@ -42,4 +43,5 @@ OPERATORS = {
     OperatorNames.LAEVATAIN: Laevatain,
     OperatorNames.LASTRITE: Lastrite,
     OperatorNames.AVYWENNA: Avywenna,
+    OperatorNames.DA_PAN: DaPan,
 }

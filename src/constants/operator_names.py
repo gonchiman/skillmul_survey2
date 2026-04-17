@@ -22,3 +22,4 @@ class OperatorNames(Enum):
     LAEVATAIN = "laevatain"
     LASTRITE = "lastrite"
     AVYWENNA = "avywenna"
+    DA_PAN = "da_pan"
