@@ -21,3 +21,4 @@ class OperatorNames(Enum):
     YVONNE = "yvonne"
     LAEVATAIN = "laevatain"
     LASTRITE = "lastrite"
+    AVYWENNA = "avywenna"
