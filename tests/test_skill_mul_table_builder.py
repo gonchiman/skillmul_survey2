@@ -25,3 +25,25 @@ def test_get_skill_mul_table(monkeypatch):
     )
 
     pd.testing.assert_frame_equal(actual, expected)
+
+def test_get_skill_mul_table_when_nan_exists(monkeypatch):
+    mock_table = {
+        "operator1": [10, 20, 30],
+        "operator2": [40, float("nan"), 60],
+    }
+
+    monkeypatch.setattr(
+        SkillMulTableBuilder,
+        "_get_data",
+        staticmethod(lambda: mock_table)
+    )
+
+    actual = SkillMulTableBuilder.get_skill_mul_table()
+
+    expected = pd.DataFrame.from_dict(
+        mock_table,
+        orient="index",
+        columns=SKILL_MUL_COLUMNS
+    )
+
+    pd.testing.assert_frame_equal(actual, expected)
