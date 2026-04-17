@@ -13,6 +13,7 @@ from src.entities.operators.pogranichnik import Pogranichnik
 from src.entities.operators.rossi import Rossi
 from src.entities.operators.snowshine import Snowshine
 from src.entities.operators.tangtang import Tangtang
+from src.entities.operators.wulfgard import Wulfgard
 
 
 OPERATORS = {
@@ -30,4 +31,5 @@ OPERATORS = {
     OperatorNames.CATCHER: Catcher,
     OperatorNames.TANGTANG: Tangtang,
     OperatorNames.PERLICA: Perlica,
+    OperatorNames.WULFGARD: Wulfgard,
 }

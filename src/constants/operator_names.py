@@ -16,3 +16,4 @@ class OperatorNames(Enum):
     CATCHER = "catcher"
     TANGTANG = "tangtang"
     PERLICA = "perlica"
+    WULFGARD = "wulfgard"
