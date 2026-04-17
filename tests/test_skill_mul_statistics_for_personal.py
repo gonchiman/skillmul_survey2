@@ -39,3 +39,35 @@ def test_get_statistics_returns_correct_values(monkeypatch):
     assert deviation == 0.0
     assert deviation_from_median == 0.0
     assert standard_score == 50.0
+
+def test_get_statistics_when_skills_deal_no_damages(monkeypatch):
+    mock_table = pd.DataFrame({
+        "battle_skill": [10, 20, 30],
+        "combo_skill": [40, 50, 60],
+        "ultimate": [70, 80, 90],
+    })
+
+    monkeypatch.setattr(
+        SkillMulStatisticsService,
+        "_get_skill_mul_df",
+        staticmethod(lambda: mock_table),
+    )
+
+    monkeypatch.setattr(
+        SkillMulStatisticsServiceForPersonal,
+        "_has_damage_skill",
+        staticmethod(lambda cond: False),
+    )
+
+    cond = SkillMulCondition(
+        OperatorNames.LIFENG,
+        SkillType.BATTLE,
+    )
+
+    deviation =  SkillMulStatisticsServiceForPersonal.get_deviation_from_mean(cond)
+    deviation_from_median = SkillMulStatisticsServiceForPersonal.get_deviation_from_median(cond)
+    standard_score = SkillMulStatisticsServiceForPersonal.get_standard_score(cond)
+
+    assert deviation == None
+    assert deviation_from_median == None
+    assert standard_score == None

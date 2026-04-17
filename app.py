@@ -30,10 +30,15 @@ def skill_mul_page():
         skill_type=skill_type,
     )
 
-    skill_mul = SkillMulService.get_skill_mul(cond)
-    deviation_from_mean = round(SkillMulStatisticsServiceForPersonal.get_deviation_from_mean(cond), 2)
-    deviation_from_median = round(SkillMulStatisticsServiceForPersonal.get_deviation_from_median(cond), 2)
-    standard_score = round(SkillMulStatisticsServiceForPersonal.get_standard_score(cond), 2)
+    skill_mul_raw = SkillMulService.get_skill_mul(cond)
+    deviation_from_mean_raw = SkillMulStatisticsServiceForPersonal.get_deviation_from_mean(cond)
+    deviation_from_median_raw = SkillMulStatisticsServiceForPersonal.get_deviation_from_median(cond)
+    standard_score_raw = SkillMulStatisticsServiceForPersonal.get_standard_score(cond)
+
+    skill_mul = skill_mul_raw if skill_mul_raw != 0 else "---"
+    deviation_from_mean = round(deviation_from_mean_raw, 2) if deviation_from_mean_raw is not None else "---"
+    deviation_from_median = round(deviation_from_median_raw, 2) if deviation_from_median_raw is not None else "---"
+    standard_score = round(standard_score_raw, 2) if standard_score_raw is not None else "---"
     
     return render_template(
         "skill_mul_search.html",
