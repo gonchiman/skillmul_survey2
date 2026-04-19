@@ -53,5 +53,41 @@ def skill_mul_page():
         standard_score=standard_score,
     )
 
+@app.route("/skill_mul_2", methods=["GET", "POST"])
+def skill_mul_page_2():
+    selected_operator_name = request.form.get("operator_name", list(OperatorNames)[0].value)
+    selected_skill_type = request.form.get("skill_type", list(SkillType)[0].value)
+
+    operator_name = OperatorNames(selected_operator_name)
+    skill_type = SkillType(selected_skill_type)
+
+    cond = SkillMulCondition(
+        operator_name=operator_name,
+        skill_type=skill_type,
+    )
+
+    skill_mul_raw = SkillMulService.get_skill_mul(cond)
+    deviation_from_mean_raw = SkillMulStatisticsServiceForPersonal.get_deviation_from_mean(cond)
+    deviation_from_median_raw = SkillMulStatisticsServiceForPersonal.get_deviation_from_median(cond)
+    standard_score_raw = SkillMulStatisticsServiceForPersonal.get_standard_score(cond)
+
+    skill_mul = skill_mul_raw if skill_mul_raw != 0 else "---"
+    deviation_from_mean = round(deviation_from_mean_raw, 2) if deviation_from_mean_raw is not None else "---"
+    deviation_from_median = round(deviation_from_median_raw, 2) if deviation_from_median_raw is not None else "---"
+    standard_score = round(standard_score_raw, 2) if standard_score_raw is not None else "---"
+    
+    return render_template(
+        "skill_mul_search.html",
+        page_title="Skill Multiple Search",
+        operator_names=OperatorNames,
+        skill_types=SkillType,
+        selected_operator_name=selected_operator_name,
+        selected_skill_type=selected_skill_type,
+        skill_mul=skill_mul,
+        deviation_from_mean=deviation_from_mean,
+        deviation_from_median=deviation_from_median,
+        standard_score=standard_score,
+    )
+
 if __name__ == "__main__":
     app.run(debug=True)
