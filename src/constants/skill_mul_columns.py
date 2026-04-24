@@ -11,7 +11,7 @@ SKILL_MUL_COLUMNS = [
     ULTIMATE_COL,
 ]
 
-class SkillMulColumns(Enum):
+class SkillMulColumns():
     BATTLE = "battle_skill"
     COMBO = "combo_skill"
     ULTIMATE = "ultimate"
