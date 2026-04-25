@@ -22,6 +22,6 @@ Thumbs.db
 classes.png
 packages.png
 
-# utils
-.utils/
-ulils/
+# directories
+/utils/
+/ex_test/
