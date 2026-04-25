@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 
 from src.constants.operator_names import OperatorNames
 from src.constants.skill_type import SkillType
 from src.entities.skill_mul_condition import SkillMulCondition
+from src.services.skill_mul_graph_service import SkillMulGraphService
 from src.services.skill_mul_service import SkillMulService
 from src.services.skill_mul_statistics_service_for_personal import SkillMulStatisticsServiceForPersonal
 
@@ -91,7 +92,7 @@ def skill_mul_page_2():
 
     skill_mul_ultimate = get_skill_mul(operator_name, SkillType.ULTIMATE)
     standard_score_ultimate = get_standard_score(operator_name, SkillType.ULTIMATE)
-    
+
     return render_template(
         "skill_mul_search_2.html",
         page_title="Skill Multiple Search",
@@ -103,8 +104,15 @@ def skill_mul_page_2():
         skill_mul_ultimate=skill_mul_ultimate,
         standard_score_battle=standard_score_battle,
         standard_score_combo=standard_score_combo,
-        standard_score_ultimate=standard_score_ultimate
+        standard_score_ultimate=standard_score_ultimate,
     )
+
+@app.route("/histogram/<skill_type>/<skill_mul>")
+def histogram(skill_type, skill_mul):
+    skill_type = SkillType(skill_type)
+    skill_mul = int(skill_mul)
+    img = SkillMulGraphService.get_histogram(skill_type, skill_mul)
+    return send_file(img, mimetype="image/png")
 
 if __name__ == "__main__":
     app.run(debug=True)
