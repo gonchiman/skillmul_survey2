@@ -110,7 +110,12 @@ def skill_mul_page_2():
 @app.route("/histogram/<skill_type>/<skill_mul>")
 def histogram(skill_type, skill_mul):
     skill_type = SkillType(skill_type)
-    skill_mul = int(skill_mul)
+
+    if skill_mul == "---":
+        skill_mul = None
+    else:
+        skill_mul = int(skill_mul)
+        
     img = SkillMulGraphService.get_histogram(skill_type, skill_mul)
     return send_file(img, mimetype="image/png")
 
