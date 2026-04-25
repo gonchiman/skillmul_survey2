@@ -30,7 +30,11 @@ class SkillMulGraphService:
                 raise ValueError(f"Invalid skill_type: {skill_type}")
 
         data = skill_mul_table[skill_mul_column].dropna()
-        bins = np.arange(data.min(), data.max() + 100, 100)
+
+        min_class = (data.min() // 100) * 100
+        max_class = (data.max() // 100) * 100 + 100
+
+        bins = np.arange(min_class, max_class + 100, 100)
 
         fig, ax = plt.subplots()
 
