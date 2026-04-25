@@ -37,3 +37,9 @@
     display: inline-block;
     min-width: 140px;
 }
+
+.result_histogram {
+    width: 80%;
+    height: auto;
+    margin-top: 16px;
+}
