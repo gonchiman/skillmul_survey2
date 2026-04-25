@@ -34,6 +34,9 @@ class SkillMulGraphService:
 
         fig, ax = plt.subplots()
 
+        fig.patch.set_facecolor("gray")
+        ax.set_facecolor("gray")
+
         _, bins, patches = ax.hist(data, bins=bins)
 
         ax.set_title(f"histogram ({skill_type.name})")
