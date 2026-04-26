@@ -2,13 +2,12 @@
     margin-top: 16px;
     padding: var(--panel-padding);
     border-radius: var(--panel-border-radius);
-    max-width: var(--panel-max-width);
-    min-width: var(--panel-min-width);
+    width: 1000px;
     background-color: var(--panel-bg);
     font-weight: bold;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
 }
 
@@ -28,9 +27,8 @@
     margin-top: 8px;
 }
 
-.result_title {
-    font-size: 18px;
-    margin-bottom: 12px;
+.result_group .result_title {
+    margin-bottom: 20px;
 }
 
 .result_label {
@@ -39,7 +37,7 @@
 }
 
 .result_histogram {
-    width: 80%;
+    width: 100%;
     height: auto;
-    margin-top: 16px;
+    margin-top: 20px;
 }
