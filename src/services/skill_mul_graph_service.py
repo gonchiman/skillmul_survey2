@@ -1,7 +1,9 @@
 from io import BytesIO
 
 import matplotlib
-matplotlib.use("Agg")
+
+from src.constants.operator_names import OperatorNames, OPERATOR_IDENTIFIERS
+# matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -19,16 +21,7 @@ class SkillMulGraphService:
     ):        
         skill_mul_table = SkillMulTableBuilder.get_skill_mul_table()
 
-        match skill_type:
-            case SkillType.BATTLE:
-                skill_mul_column = SkillMulColumns.BATTLE
-            case SkillType.COMBO:
-                skill_mul_column = SkillMulColumns.COMBO
-            case SkillType.ULTIMATE:
-                skill_mul_column = SkillMulColumns.ULTIMATE
-            case _:
-                raise ValueError(f"Invalid skill_type: {skill_type}")
-
+        skill_mul_column = SkillMulGraphService._get_skill_mul_column(skill_type)
         data = skill_mul_table[skill_mul_column].dropna()
 
         min_class = (data.min() // 100) * 100
@@ -64,3 +57,63 @@ class SkillMulGraphService:
         buf.seek(0)
 
         return buf
+
+    @staticmethod
+    def get_barplot(
+        skill_type: SkillType,
+        operator_name: OperatorNames | None = None,
+        ascending: bool | None = None,
+    ):
+        skill_mul_table = SkillMulTableBuilder.get_skill_mul_table()
+
+        if ascending is not None:
+            skill_mul_table = SkillMulTableBuilder.sort_skill_mul_table(
+                skill_mul_table=skill_mul_table,
+                skill_type=skill_type,
+                ascending=ascending,
+            )
+
+        skill_mul_column = SkillMulGraphService._get_skill_mul_column(skill_type)
+
+        series = skill_mul_table[skill_mul_column].dropna()
+        labels = [OPERATOR_IDENTIFIERS[operator] for operator in series.index]
+        data = series.values
+
+        fig, ax = plt.subplots()
+
+        fig.patch.set_facecolor("gray")
+        ax.set_facecolor("gray")
+
+        bars = ax.bar(labels, data)
+
+        ax.set_title(f"barplot ({skill_type.name})")
+        ax.set_xlabel("operators")
+        ax.set_ylabel("skill multiplier")
+        ax.tick_params(axis="x", labelsize=8)
+
+        for bar in bars:
+            bar.set_color("lightgray")
+
+        if operator_name is not None:
+            for operator, bar in zip(series.index, bars):
+                if operator == operator_name:
+                    bar.set_color("orange")
+
+        buf = BytesIO()
+        fig.savefig(buf, format="png")
+        plt.close(fig)
+        buf.seek(0)
+
+        return buf
+
+    @staticmethod
+    def _get_skill_mul_column(skill_type: SkillType) -> str:
+        match skill_type:
+            case SkillType.BATTLE:
+                return SkillMulColumns.BATTLE
+            case SkillType.COMBO:
+                return SkillMulColumns.COMBO
+            case SkillType.ULTIMATE:
+                return SkillMulColumns.ULTIMATE
+            case _:
+                raise ValueError(f"Invalid skill_type: {skill_type}")

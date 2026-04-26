@@ -1,7 +1,7 @@
 import pandas as pd
 
 from src.constants.operator_names import OperatorNames
-from src.constants.skill_mul_columns import SKILL_MUL_COLUMNS
+from src.constants.skill_mul_columns import SKILL_MUL_COLUMNS, SkillMulColumns
 from src.constants.skill_type import SkillType
 from src.entities.skill_mul_condition import SkillMulCondition
 from src.repositories.operator_repository import OperatorRepository
@@ -16,6 +16,18 @@ class SkillMulTableBuilder:
             data,
             orient="index",
             columns=SKILL_MUL_COLUMNS,
+        )
+    
+    @staticmethod
+    def sort_skill_mul_table(
+        skill_mul_table: pd.DataFrame,
+        skill_type: SkillType,
+        ascending: bool,
+    ) -> pd.DataFrame:
+        column = SkillMulTableBuilder._get_skill_mul_column(skill_type)
+        return skill_mul_table.sort_values(
+            by=column,
+            ascending=ascending,
         )
 
     @staticmethod
@@ -56,3 +68,15 @@ class SkillMulTableBuilder:
             return bool(operator_cls.ULTIMATES)
         
         raise ValueError("invalid skill type")
+    
+    @staticmethod
+    def _get_skill_mul_column(skill_type: SkillType) -> str:
+        match skill_type:
+            case SkillType.BATTLE:
+                return SkillMulColumns.BATTLE
+            case SkillType.COMBO:
+                return SkillMulColumns.COMBO
+            case SkillType.ULTIMATE:
+                return SkillMulColumns.ULTIMATE
+            case _:
+                raise ValueError(f"Invalid skill_type: {skill_type}")
