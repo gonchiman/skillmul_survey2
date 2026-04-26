@@ -21,6 +21,7 @@
             <p class="result_title">Battle Skill</p>
             <p><span class="result_label">Skill Mul:</span> {{ skill_mul_battle }}</p>
             <p><span class="result_label">Standard Score:</span> {{ standard_score_battle }}</p>
+            <img class="result_histogram" src="/barplot/battle/{{ selected_operator_name }}">
             <img class="result_histogram" src="/histogram/battle/{{ skill_mul_battle }}">
         </div>
         
@@ -28,6 +29,7 @@
             <p class="result_title">Combo Skill</p>
             <p><span class="result_label">Skill Mul:</span> {{ skill_mul_combo }}</p>
             <p><span class="result_label">Standard Score:</span> {{ standard_score_combo }}</p>
+            <img class="result_histogram" src="/barplot/combo/{{ selected_operator_name }}">            
             <img class="result_histogram" src="/histogram/combo/{{ skill_mul_combo }}">
         </div>
 
@@ -35,6 +37,7 @@
             <p class="result_title">Ultimate</p>
             <p><span class="result_label">Skill Mul:</span> {{ skill_mul_ultimate }}</p>
             <p><span class="result_label">Standard Score:</span> {{ standard_score_ultimate }}</p>
+            <img class="result_histogram" src="/barplot/ultimate/{{ selected_operator_name }}">            
             <img class="result_histogram" src="/histogram/ultimate/{{ skill_mul_ultimate }}">
         </div>
     </div>

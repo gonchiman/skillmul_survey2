@@ -119,5 +119,17 @@ def histogram(skill_type, skill_mul):
     img = SkillMulGraphService.get_histogram(skill_type, skill_mul)
     return send_file(img, mimetype="image/png")
 
+@app.route("/barplot/<skill_type>/<operator_name>")
+def barblot(skill_type, operator_name):
+    skill_type = SkillType(skill_type)
+    operator_name = OperatorNames(operator_name)
+        
+    img = SkillMulGraphService.get_barplot(
+        skill_type, 
+        operator_name,
+        ascending=False
+    )
+    return send_file(img, mimetype="image/png")
+
 if __name__ == "__main__":
     app.run(debug=True)

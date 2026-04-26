@@ -3,7 +3,7 @@ from io import BytesIO
 import matplotlib
 
 from src.constants.operator_names import OperatorNames, OPERATOR_IDENTIFIERS
-# matplotlib.use("Agg")
+matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import numpy as np
