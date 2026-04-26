@@ -3,7 +3,7 @@
 {% block content %}
 <form action="/skill_mul_2" method="post">
     <div>
-        <label for="operator_name">Operator Name</label>
+        <label for="operator_name">Select Operator</label>
         <select id="operator_name" name="operator_name" onchange="this.form.submit()">
             {% for operator_name in operator_names %}
                 <option value="{{ operator_name.value }}"
